@@ -1,6 +1,18 @@
 # Compiled class file
 *.class
 
+# eclipse settings
+.settings
+.settings/*
+
+# maven target
+target
+target/*
+
+# eclipse class path and project setting
+.classpath
+.project
+
 # Log file
 *.log
 
