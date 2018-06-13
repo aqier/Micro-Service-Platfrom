@@ -3,11 +3,10 @@
 
 # eclipse settings
 .settings
-.settings/*
+.metadata
 
 # maven target
 target
-target/*
 
 # eclipse class path and project setting
 .classpath
