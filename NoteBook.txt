@@ -1,0 +1,16 @@
+JVM 调优：  
+# 通过 MALLOC_ARENA_MAX 限制 每个线程分配的 arena 数量上限
+export MALLOC_ARENA_MAX=2
+nohup $JAVA_HOME/bin/java -server \
+-XX:CICompilerCount=2 \                  # JIT编译器线程数
+-XX:+UseG1GC \                           # 启用 G1 垃圾回收机制
+-XX:ConcGCThreads=1 \                    # 并行垃圾回收线程数
+-XX:ParallelGCThreads=4 \                # 配置GC线程数
+-Xmx3g \
+-Xms3g \
+-Xmn1g \
+-XX:+ExplicitGCInvokesConcurrent \
+-XX:MaxDirectMemorySize=256M \
+-XX:MaxMetaspaceSize=64M \
+
+java -server -Xmx1G -Xms512M -XX:MaxDirectMemorySize=256M -XX:MaxMetaspaceSize=256M
